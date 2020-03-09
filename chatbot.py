@@ -52,14 +52,14 @@ pairs = [
 
     ],
     [
-        r"quit",
+        r"quit"|"Quit",
         ["","bye then"]
 
     ],
 ]
 
 def chatty():
-    print("Hi, I'm Gordon Ramsay \n Type quit to leave ") #default message at the start
+    print("Hi, I'm RamsayBot \n Type 'Quit' to leave ") #default message at the start
     chat = Chat(pairs, reflections)
     chat.converse()
 
