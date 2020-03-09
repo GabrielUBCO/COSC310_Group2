@@ -10,7 +10,7 @@ pairs = [
     ],
     [
         r"who are you?",
-        ["Hey I'm Gordon Ramsay, Chef and Restauranteur, 24 Restaurants accross the world",]
+        ["Hey I'm Gordon Ramsay, Chef and Restauranteur, 24 Restaurants accross the world. You know who the best chef is?",]
     ],
     [
         r"how are you ?",
@@ -28,6 +28,23 @@ pairs = [
         r"(.*) age?",
         ["53"]
 
+    ],
+    [
+            r"(.*) you",
+        ["You're not an idiot sandwich after all."]
+
+    ],
+    [
+        r"No|Not yet",
+        ["It's okay. You sack of uselessness."]
+    ],
+    [
+        r"No|Not yet",
+        ["It's okay. You sack of uselessness."]
+    ],
+    [
+        r"Yes",
+        ["Superb. Do you have any more questions for me?", "Good. Ask me anything else."]
     ],
     [
         r"what (.*) want ?",
