@@ -10,7 +10,7 @@ pairs = [
     ],
     [
         r"who are you?",
-        ["Hey I'm Gordon Ramsay, Chef and Restauranteur, 24 Restaurants accross the world",]
+        ["Hey I'm Gordon Ramsay, Chef and Restauranteur, 24 Restaurants accross the world. You know who the best chef is?",]
     ],
     [
         r"how are you ?",
@@ -30,19 +30,36 @@ pairs = [
 
     ],
     [
+            r"(.*) you",
+        ["You're not an idiot sandwich after all."]
+
+    ],
+    [
+        r"No|Not yet",
+        ["It's okay. You sack of uselessness."]
+    ],
+    [
+        r"No|Not yet",
+        ["It's okay. You sack of uselessness."]
+    ],
+    [
+        r"Yes",
+        ["Superb. Do you have any more questions for me?", "Good. Ask me anything else."]
+    ],
+    [
         r"what (.*) want ?",
         ["THE LAMB SAUCE!!!!",]
 
     ],
     [
-        r"quit",
+        r"quit"|"Quit",
         ["","bye then"]
 
     ],
 ]
 
 def chatty():
-    print("Hi, I'm Gordon Ramsay \n Type quit to leave ") #default message at the start
+    print("Hi, I'm RamsayBot \n Type 'Quit' to leave ") #default message at the start
     chat = Chat(pairs, reflections)
     chat.converse()
 
