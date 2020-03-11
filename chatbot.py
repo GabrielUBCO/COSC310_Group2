@@ -9,12 +9,24 @@ pairs = [
         ["Hello %1, How are you today ?",]
     ],
     [
-        r"who are you?",
+        r"who are you?|whats your name?|who are you|what's your name|",
         ["Hey I'm Gordon Ramsay, Chef and Restauranteur, 24 Restaurants accross the world. You know who the best chef is?",]
     ],
     [
-        r"how are you ?",
+        r"how are you?|how are you doing?|how is it going?",
         ["I'm doing good\nHow about You?",]
+    ],
+    [
+        r"whats your (.*) dish?|whats your (.*) food?",
+        ["Not to toot my own horn, but nothing beats a well prepared beef wellington",]
+    ],
+    [
+        r"how (.*) steak|how (.*) this",
+        ["well... \nIT'S RAWWWW!!",]
+    ],
+    [
+        r"wassup?|what's up?|sup?",
+        ["this conversation is a disaster, just like pineapple on pizza/n*tosses plate*",]
     ],
     [
         r"sorry (.*)",
@@ -26,7 +38,7 @@ pairs = [
     ],
     [
         r"(.*) age?",
-        ["53"]
+        ["I am 53 years old"]
 
     ],
     [
@@ -39,11 +51,11 @@ pairs = [
         ["It's okay. You sack of uselessness."]
     ],
     [
-        r"No|Not yet",
+        r"No|Not yet|nope|nah",
         ["It's okay. You sack of uselessness."]
     ],
     [
-        r"Yes",
+        r"Yes|yep|yeah|yah|yes",
         ["Superb. Do you have any more questions for me?", "Good. Ask me anything else."]
     ],
     [
