@@ -129,6 +129,11 @@
          "responses": ["It’s really hard not to swear, but I’ll have a go!"],
          "context_set": ""
         },
+        {"tag": "Show",
+         "patterns": ["What is your favorite show?"],
+         "responses": ["Sharkbait the documentary."],
+         "context_set": ""
+        },
         {"tag": "Avoid",
          "patterns": ["What foods will you avoid?"],
          "responses": ["As a chef, I think my job is to discover as much as I can. You know, anything black or under-seasoned I find really hard to eat. So I'll eat anything from a beating open heart, live, to a jellied eel, to beans on toast. I'll eat anything provided it's got season."],
