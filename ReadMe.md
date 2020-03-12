@@ -2,10 +2,10 @@ RamsayBot
 
 Written in Python 3.6.1 via conda virtual environment
 Packages used:
-nltk 3.4.5
-numpy 1.18.1
-tensorflow 1.13.1
-tflearn 0.3.2
+nltk 3.4.5,
+numpy 1.18.1,
+tensorflow 1.13.1,
+tflearn 0.3.2,
 json5 0.9.1
 
 A list of topics, including question patterns and responses is saved to a JSON file named topics.
