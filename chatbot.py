@@ -1,79 +1,73 @@
 import nltk
-nltk.download('punkt')
-nltk.download('wordnet')
-from nltk.chat.util import Chat, reflections
+from nltk.stem.lancaster import LancasterStemmer
+stemmer = LancasterStemmer()
 
-pairs = [
-    [
-        r"my name is (.*)",
-        ["Hello %1, How are you today ?",]
-    ],
-    [
-        r"who are you?|whats your name?|who are you|what's your name|",
-        ["Hey I'm Gordon Ramsay, Chef and Restauranteur, 24 Restaurants accross the world. You know who the best chef is?",]
-    ],
-    [
-        r"how are you?|how are you doing?|how is it going?",
-        ["I'm doing good\nHow about You?",]
-    ],
-    [
-        r"whats your (.*) dish?|whats your (.*) food?",
-        ["Not to toot my own horn, but nothing beats a well prepared beef wellington",]
-    ],
-    [
-        r"how (.*) steak|how (.*) this",
-        ["well... \nIT'S RAWWWW!!",]
-    ],
-    [
-        r"wassup?|what's up?|sup?",
-        ["this conversation is a disaster, just like pineapple on pizza/n*tosses plate*",]
-    ],
-    [
-        r"sorry (.*)",
-        ["WHAT ARE YOU","You're an IDIOT SANDWICH",]
-    ],
-    [
-        r"hi|hey|hello",
-        ["Hello", "Hey",]
-    ],
-    [
-        r"(.*) age?",
-        ["I am 53 years old"]
+import numpy
+import tensorflow as tf
+import tflearn
+import random
 
-    ],
-    [
-            r"(.*) you",
-        ["You're not an idiot sandwich after all."]
+import json
+with open("topics.json") as file:
+    data = json.load(file)
 
-    ],
-    [
-        r"No|Not yet",
-        ["It's okay. You sack of uselessness."]
-    ],
-    [
-        r"No|Not yet|nope|nah",
-        ["It's okay. You sack of uselessness."]
-    ],
-    [
-        r"Yes|yep|yeah|yah|yes",
-        ["Superb. Do you have any more questions for me?", "Good. Ask me anything else."]
-    ],
-    [
-        r"what (.*) want ?",
-        ["THE LAMB SAUCE!!!!",]
+words = []
+labels = []
+list_x = []
+list_y = []
 
-    ],
-    [
-        r"quit"|"Quit",
-        ["","bye then"]
+print(data)
 
-    ],
-]
+for topic in data["topics"]:
+    for pattern in topic["patterns"]:
+        wrds = nltk.word_tokenize(pattern)
+        words.extend(wrds)
+        list_x.append(wrds)
+        list_y.append(topic["tag"])
+        
+    if topic["tag"] not in labels:
+        labels.append(topic["tag"])
+         
+words = [stemmer.stem(w.lower()) for w in words]
+words = sorted(list(set(words)))
 
-def chatty():
-    print("Hi, I'm RamsayBot \n Type 'Quit' to leave ") #default message at the start
-    chat = Chat(pairs, reflections)
-    chat.converse()
+labels = sorted(labels)
 
-if __name__ == "__main__":
-    chatty()
+training = []
+output = []
+
+empty = [0 for _ in range(len(labels))]
+
+for x, list in enumerate(list_x):
+    bag = []
+    
+    wrds = [stemmer.stem(w.lower()) for w in list if w != "?"]
+
+    for w in words:
+        if w in wrds:
+            bag.append(1)
+        else:
+            bag.append(0)
+            
+    output_x = empty[:]
+    output_x[labels.index(list_y[x]) ]
+    
+    training.append(bag)
+    output.append(output_x)
+    
+training = numpy.array(training)
+output = numpy.array(output)
+
+tf.reset_default_graph()
+
+net = tflearn.input_data(shape=[None, len(training[0])])
+net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
+net = tflearn.regression(net)
+
+model = tflearn.DNN(net)
+
+model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+model.save("model.tflearn")
