@@ -88,7 +88,7 @@
          "patterns": ["Suggest me a recipe?", "Do you know any recipe?"],
          "responses": ["You can cook? Ugh, who's gonna eat.", "Here is a link to my recipe: https://www.gordonramsay.com/gr/recipes/ramsay-in-10-shrimp-scampi-with-capellini-pasta/"],
          "context_set": ""
-        }
+        },
         {"tag": "Restaurant",
          "patterns": ["What is your favourite place to eat?"],
          "responses": ["In the UK or US?"],
