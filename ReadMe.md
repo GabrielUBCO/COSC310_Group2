@@ -42,7 +42,7 @@ RamsayBot will try to give a suitable response depending on what it predicts to 
 
 Features programmed in assignment 3:
 
-- GUI so user is typing into a nicer interface. GUI makes the chatbot more user friendly (easier to read, simple layout). For example, we have increased the spacing between lines of dialogue and the text is white and the background is dark, which enhances readibility.
+- GUI so user is typing into a nicer interface. GUI makes the chatbot more user friendly (easier to read, simple layout). For example, we have increased the spacing between lines of dialogue; the text is white and the background is dark, enhancing readibility.
 
 - Extra topic to agent's repertoire: Gordon Ramsay providing relationship advice. The original topic covers content about Gordon Ramsay's personal life and answers to some general questions. The new topic focuses on relationship advice; RamsayBot will answer user's questions about relationships by providing his own advice. For example, when the user asks for dating activities, RamsayBot recommends "Cooking for each other" or "Doing exercise together", activities which Gordon Ramsay himself would enjoy.
 
