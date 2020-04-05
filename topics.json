@@ -1,5 +1,5 @@
 {"topics": [
-       {"tag": "Greeting",
+        {"tag": "Greeting",
          "patterns": ["Hi", "are you", "Hello", "Good day", "Whats up"],
          "responses": ["Hello!", "Good to see you again!", "Hi there"],
          "context_set": ""
@@ -79,7 +79,7 @@
          "responses": ["Singer Ellie Goulding punched me once."],
          "context_set": ""
         },
-        {"tag": "Money",
+        {"tag": "Earning",
          "patterns": ["How much money did you make last year?","How much do you earn?"],
          "responses": ["More than you","$60 million. Last year."],
          "context_set": ""
@@ -137,6 +137,116 @@
         {"tag": "Avoid",
          "patterns": ["What foods will you avoid?"],
          "responses": ["As a chef, I think my job is to discover as much as I can. You know, anything black or under-seasoned I find really hard to eat. So I'll eat anything from a beating open heart, live, to a jellied eel, to beans on toast. I'll eat anything provided it's got season."],
+         "context_set": ""
+        },
+        {"tag": "Date",
+         "patterns": ["Can I date you, Gordon?"],
+         "responses": ["Worst question ever, just like pineapple on pizza. Of course not!"],
+         "context_set": ""
+        },
+        {"tag": "Incest",
+         "patterns": ["Is it weird to date my sister-in-law?", "Is it weird to date my brother-in-law?"],
+         "responses": ["Are you an idiot sandwich? Of course not."],
+         "context_set": ""
+        },
+        {"tag": "Breakup",
+         "patterns": ["How can I deal with a breakup?","How can I get over a breakup?"],
+         "responses": ["Tell yourself it was not meant to be. Give yourself time to move on."],
+         "context_set": ""
+        },
+        {"tag": "Like",
+         "patterns": ["How do I tell someone I like them?", "How do I ask someone out?"],
+         "responses": ["Just tell them. Take things slow."],
+         "context_set": ""
+        },
+        {"tag": "First",
+         "patterns": ["What should I do when dating someone for the first time?"],
+         "responses": ["Be safe. Meet at a public location. Have your own transportation."],
+         "context_set": ""
+        },
+        {"tag": "Important",
+         "patterns": ["What is the most important thing about a relationship?"],
+         "responses": ["Commitment. It is all about commitment."],
+         "context_set": ""
+        },
+        {"tag": "Better",
+         "patterns": ["How can I be a better partner?"],
+         "responses": ["Be honest, engaged, affectionate, respectful, and trustworthy."],
+         "context_set": ""
+        },
+        {"tag": "Romantic",
+         "patterns": ["What can I do that is romantic?"],
+         "responses": ["Give your partner breakfast in bed."],
+         "context_set": ""
+        },
+        {"tag": "Parents",
+         "patterns": ["I’m meeting my partner’s parents. Any advice?"],
+         "responses": ["Calm down. Be yourself. Do not be nervous."],
+         "context_set": ""
+        },
+        {"tag": "Devote",
+         "patterns": ["How can I tell my partner to devote more time for me?"],
+         "responses": ["Sit down with your partner and discuss your real expectations."],
+         "context_set": ""
+        },
+        {"tag": "Money",
+         "patterns": ["How should I talk to my partner about money?"],
+         "responses": ["Talk to your partner honestly. Be upfront, even if it is difficult."],
+         "context_set": ""
+        },
+        {"tag": "Cheating",
+         "patterns": ["What should I do if I think my partner is cheating on me?", "I'm being cheated on. What do I do?"],
+         "responses": ["Ask them what is going on. Do not accuse them if you have no evidence."],
+         "context_set": ""
+        },
+        {"tag": "Listen",
+         "patterns": ["How can I make my partner listen to me more?", "How do I make my partner pay attention when I speak?"],
+         "responses": ["Instead of just telling them what you want, let them know how it would make you feel."],
+         "context_set": ""
+        },
+        {"tag": "Jealous",
+         "patterns": ["I get jealous when my partner hangs out with the opposite gender. What should I do?"],
+         "responses": ["Get out of your comfort zone. Do things that build up your confidence. There is no need to be insecure."],
+         "context_set": ""
+        },
+        {"tag": "Activities",
+         "patterns": ["What activities do you recommend for dates?"],
+         "responses": ["Cook for each other.", "Do exercise together.", "Grab a bite to eat.", "Play some video games."],
+         "context_set": ""
+        },
+        {"tag": "Gift",
+         "patterns": ["What should I get for my girlfriend’s birthday?", "What should I get for my boyfriend’s birthday?"],
+         "responses": ["Cook something special for your partner. Make some amazing cake."],
+         "context_set": ""
+        },
+        {"tag": "Anniversary",
+         "patterns": ["Is forgetting an anniversary a big deal?"],
+         "responses": ["Forgetting a marriage anniversary is a big deal. Forgetting when you started dating? Not so much."],
+         "context_set": ""
+        },
+        {"tag": "Pet",
+         "patterns": ["What should I do if my partner wants to get a cat but I do not?", "What should I do if my partner wants to get a dog but I do not?"],
+         "responses": ["Compromise is key. Ask if there is another animal he wants to keep as a pet."],
+         "context_set": ""
+        },
+        {"tag": "Lying",
+         "patterns": ["What should I do if my partner is lying?"],
+         "responses": ["Communication is the most important part of a relationship. Ask why your partner lied and tell your partner that it made you mistrust them."],
+         "context_set": ""
+        },
+        {"tag": "Movingout",
+         "patterns": ["How should I tell my family I want to move out and live with my partner?"],
+         "responses": ["Gather your essential documents before telling them. If they overreact, it will be way less complicated if you have your essentials."],
+         "context_set": ""
+        },
+        {"tag": "Spend",
+         "patterns": ["Is wanting to spend more time with my partner too much to ask?"],
+         "responses": ["No, this is not too much to ask. There is no point having a partner if they do not spend time with you."],
+         "context_set": ""
+        },
+        {"tag": "Long",
+         "patterns": ["How can I make long distance relationships work?"],
+         "responses": ["Set some ground rules to manage your expectations."],
          "context_set": ""
         }
     ]
