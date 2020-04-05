@@ -1,7 +1,12 @@
 {"topics": [
-        {"tag": "Greeting",
-         "patterns": ["Hi", "are you", "Hello", "Good day"],
-         "responses": ["Hello!", "Good to see you again!", "Hi there"],
+        {"tag": "Spend",
+         "patterns": ["Is wanting to spend more time with my partner too much to ask?"],
+         "responses": ["No, this is not too much to ask. There is no point having a partner if they do not spend time with you."],
+         "context_set": ""
+        },
+        {"tag": "Long",
+         "patterns": ["How can I make long distance relationships work?"],
+         "responses": ["Set some ground rules to manage your expectations."],
          "context_set": ""
         },
         {"tag": "Goodbye",
@@ -34,9 +39,10 @@
          "responses": ["I own 24 restaurants across the world."],
          "context_set": ""
         },
-        {"tag": "Birthday",
-         "patterns": ["When is your birthday?", "when were you born?"],
-         "responses": ["November 8th 1966", "My birthday is the 8th of November 1966"],
+        
+        {"tag": "Greeting",
+         "patterns": ["Hi", "are you", "Hello", "Good day"],
+         "responses": ["Hello!", "Good to see you again!", "Hi there"],
          "context_set": ""
         },
         {"tag": "Recommendations",
@@ -97,6 +103,11 @@
         {"tag": "UK",
          "patterns": ["UK"],
          "responses": ["Union Street Cafe always pleases me."],
+         "context_set": ""
+        },
+        {"tag": "Birthday",
+         "patterns": ["When is your birthday?", "when were you born?"],
+         "responses": ["November 8th 1966", "My birthday is the 8th of November 1966"],
          "context_set": ""
         },
         {"tag": "Chef",
@@ -238,16 +249,6 @@
          "patterns": ["How should I tell my family I want to move out and live with my partner?"],
          "responses": ["Gather your essential documents before telling them. If they overreact, it will be way less complicated if you have your essentials."],
          "context_set": ""
-        },
-        {"tag": "Spend",
-         "patterns": ["Is wanting to spend more time with my partner too much to ask?"],
-         "responses": ["No, this is not too much to ask. There is no point having a partner if they do not spend time with you."],
-         "context_set": ""
-        },
-        {"tag": "Long",
-         "patterns": ["How can I make long distance relationships work?"],
-         "responses": ["Set some ground rules to manage your expectations."],
-         "context_set": ""
-        }
+        }        
     ]
 }
