@@ -12,6 +12,7 @@ word = "annoying"
 #this will be the user's response in which we will look for synonyms for the keywords
 sent = ['Yohen', 'is', 'so', 'irritating', '.']
 word_synonyms = get_word_synonyms_from_sent(word, sent)
-print ("word:", word)
 print ("sentence:", sent)
+print ("word:", word)
+
 print ("Synonyms for '" + word.upper() + "' in the sentence : " + ", ".join(word_synonyms))
