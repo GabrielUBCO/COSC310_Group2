@@ -88,9 +88,9 @@ def bag_of_words(s, words):
     
     s_words = nltk.word_tokenize(s)
     s_words = [stemmer.stem(spell.correction(word.lower())) for word in s_words]
+     tagged = nltk.pos_tag(s_words)
     
-    
-    tagged = nltk.pos_tag(s_words)
+   
     
     print(tagged)
     
