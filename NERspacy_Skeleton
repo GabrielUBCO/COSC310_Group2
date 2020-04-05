@@ -1,0 +1,42 @@
+
+#we use spacy module for NER
+#in the prompt we download the required modules by
+# pip install spacy
+# python -m spacy download en_core_web_sm
+
+import spacy
+
+#Loading required functions for NER
+doNER = spacy.load("en_core_web_sm")
+
+#get the message from the user (2 examples)
+
+msg1 = ('Canada gave $1.5 billion as relief fund on Thursday')
+msg2 = ('I\'ve been awarded 16 Michelin stars in my career.')
+
+m1 = doNER(msg1)
+m2 = doNER(msg2)
+
+# Giving Entities and the respective labels
+for x in m1.ents:
+    print(x.text, x.label_)
+
+print("\n")
+
+for x in m2.ents:
+    print(x.text, x.label_)
+
+"""
+The tags >>
+
+PERSON, 
+NORP (nationalities, religious and political groups), 
+FAC (buildings, airports etc.), ORG (organizations), 
+GPE (countries, cities etc.), LOC (mountain ranges, water bodies etc.), 
+PRODUCT (products), EVENT (event names), WORK_OF_ART (books, song titles), 
+LAW (legal document titles), 
+LANGUAGE (named languages), 
+DATE, TIME, PERCENT, 
+MONEY, QUANTITY, ORDINAL and CARDINAL.
+
+"""
