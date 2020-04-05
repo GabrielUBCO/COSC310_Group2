@@ -14,27 +14,27 @@ The questions are then tokenized in to a list of words using nltk's word tolkeni
 
 Those lists are then added into list_x[] and the corresponding topics added to list_y[]
 
-The words are then stemmed meaning reduced to the root using Lancaster stemming algorith(e.g. playing reduced play) then put into a set to remove duplicates.
+The words are then stemmed, meaning reduced to the root using Lancaster stemming algorithm (e.g. playing reduced play) then put into a set to remove duplicates.
 
-The set is then made back into a list then sorted, topics are also sorted.
+The set is then made back into a list then sorted; topics are also sorted.
 
 A training[] and output[] numpy array are initialized.(Numpy arrays are easier to operate on)
 
-The lists of words from list_x are then stemmed, lowercased and added to a bag array as 1s if they exist in words[] and 0s if they don't.
+The lists of words from list_x are then stemmed, lowercased, and added to a bag array as 1s if they exist in words[] and 0s if they don't.
 
 Add the bag array to training.
 
 We then create a simple neural network.
 
-This one has a input layer, 3 hidden layers with 16 neurons, 16 neurons and 8 neurons respectively and an output layer.
+This one has a input layer, 3 hidden layers with 16 neurons, 16 neurons, and 8 neurons respectively and an output layer.
 
 The model is then trained using this neural network to learn to predict the users intention when they ask questions.
 
 Each input in training[] passes through every neuron on the first hidden layer and from each on that layer to each neuron on the next, and so on.
 
-The traing goes through 1000 cycles in batches of 10.
+The training goes through 1000 cycles in batches of 10.
 
-The bag_of_words function is used to compare the words from the user input to each bags of words to predict which topic the question pertains to.
+The bag_of_words function is used to compare the words from the user input to each bag of words to predict which topic the question pertains to.
 
 The chat fuction allows the user to chat with RamsayBot.
 
