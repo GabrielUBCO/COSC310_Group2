@@ -52,6 +52,8 @@ Features programmed in assignment 3:
 
 - Feature that enables agent to recognize synonyms and handle them appropriately. We have included a feature that enables the agent to provide a suitable response when the user types a question using a synonym for any of the tags listed under topics.json. The function we have created takes in a word and a sentence and then checks if a synonym of the word exists in the sentence. This is to make the conversation as smooth and natural as possible. For example, when the user asks "Should I prioritize my career or my relationship?" or "Should I prioritize my job or my relationship?", the agent will provide the same answer since 'career' and 'job' have the same meaning.
 
+- Feature that includes POS tagging. We have included a feature that identifies part of speech tags and gets nouns, verbs, and adjectives etc. from the user input. This allows the chatbot to differentiate between the usage of a verb or a noun when the same word is being used in different contexts. For example, the word 'sport' can be used as either a verb or a noun. POS tagging allows the software to distinguish between these two word forms.
+
 - Feature that enables agent to have a conversation with another agent via sockets. As one of the goals of the assignment is for our chatbot to be able to have a conversation with another chatbot in class via sockets, we have included this feature into our chatbot. However, as we do not have access to any other chatbots from the class due to the current circumstances, we are unable to demonstrate this feature.
 
 
