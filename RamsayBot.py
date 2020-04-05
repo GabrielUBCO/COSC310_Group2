@@ -1,9 +1,10 @@
 import nltk
 from nltk.corpus import wordnet
+from nltk import pos_tag
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
+nltk.download('averaged_perceptron_tagger')
 
-from spellchecker import SpellChecker
 import numpy
 import tensorflow as tf
 import tflearn
@@ -11,6 +12,7 @@ import random
 import json
 import tkinter
 from tkinter import *
+from spellchecker import SpellChecker
 
 with open("topics.json") as file:
     data = json.load(file)
@@ -61,6 +63,9 @@ with open("topics.json") as file:
     training = numpy.array(training)
     output = numpy.array(output)
 
+with open("default.json") as default:
+    defa = json.load(default)
+    
 tf.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(training[0])])
@@ -72,15 +77,36 @@ net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
 
-model.fit(training, output, n_epoch=1000, batch_size=10, show_metric=True)
+model.fit(training, output, n_epoch=1200, batch_size=10, show_metric=True)
 model.save("model.tflearn")
 
 def bag_of_words(s, words):
+    spell = SpellChecker()
+    
     bag = [0 for _ in range(len(words))]
-
+    prep = []
+    
     s_words = nltk.word_tokenize(s)
-    s_words = [stemmer.stem(word.lower()) for word in s_words]
-
+    s_words = [stemmer.stem(spell.correction(word.lower())) for word in s_words]
+    
+    
+    tagged = nltk.pos_tag(s_words)
+    
+    print(tagged)
+    
+    for item in tagged:
+        if item[1][0] == 'N':
+            prep.append(item[0])
+        if item[1][0] == 'V':
+            prep.append(item[0])
+        if item[1][0] == 'J':
+            prep.append(item[0])
+    
+    for wo in prep:
+        for syn in wordnet.synsets(wo):
+            for l in syn.lemma_names():
+                s_words.append(l)
+    
     for se in s_words:
         for i, w in enumerate(words):
             if w == se:
@@ -96,13 +122,19 @@ def chat():
         base.destroy()
         
     if msg != '':
+        numpy.set_printoptions(formatter={'float_kind':'{:f}'.format})
         results = model.predict([bag_of_words(msg, words)])
         results_index = numpy.argmax(results)
         tag = labels[results_index]
         
         for tg in data["topics"]:
-            if tg['tag'] == tag:
-                responses = tg['responses']
+            if numpy.amax(results)<=0.5:
+                responses = defa["default"]
+            else:
+                if tg['tag'] == tag:
+                    responses = tg["responses"]
+        
+        
         
         ChatLog.config(state=NORMAL)
         ChatLog.insert(END, "You: " + msg + '\n\n')

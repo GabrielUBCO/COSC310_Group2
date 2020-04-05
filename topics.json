@@ -1,6 +1,6 @@
 {"topics": [
         {"tag": "Greeting",
-         "patterns": ["Hi", "are you", "Hello", "Good day", "Whats up"],
+         "patterns": ["Hi", "are you", "Hello", "Good day"],
          "responses": ["Hello!", "Good to see you again!", "Hi there"],
          "context_set": ""
         },
@@ -45,7 +45,7 @@
          "context_set": ""
         },
         {"tag": "Live",
-         "patterns": ["Where do you live?", "Where is your home"],
+         "patterns": ["Where do you live?", "Where is your home at"],
          "responses": ["I have  three houses in London, Los Angeles and Cornwall"],
          "context_set": ""
         },
@@ -56,7 +56,7 @@
         },
         {"tag": "Games",
          "patterns": ["Do you have a video game?"],
-         "responses": ["Yes, it’s a Nintendo Wii's Hell's Kitchen game."],
+         "responses": ["Yes, it is a Nintendo Wii's Hell's Kitchen game."],
          "context_set": ""
         },
         {"tag": "Meals",
@@ -110,7 +110,7 @@
          "context_set": ""
         },
         {"tag": "Hate",
-         "patterns": ["Do you hate anything?", "Do you hate anyone"],
+         "patterns": ["Do you hate anything", "Do you hate anyone"],
          "responses": ["Idiot Sandwiches."],
          "context_set": ""
         },
