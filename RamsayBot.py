@@ -69,43 +69,38 @@ with open("default.json") as default:
 tf.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(training[0])])
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 20)
+net = tflearn.fully_connected(net, 20)
+net = tflearn.fully_connected(net, 10)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
 
-model.fit(training, output, n_epoch=1200, batch_size=10, show_metric=True)
+model.fit(training, output, n_epoch=1000, batch_size=10, show_metric=True)
 model.save("model.tflearn")
 
 def bag_of_words(s, words):
     spell = SpellChecker()
     
     bag = [0 for _ in range(len(words))]
-    prep = []
     
     s_words = nltk.word_tokenize(s)
     s_words = [stemmer.stem(spell.correction(word.lower())) for word in s_words]
-     tagged = nltk.pos_tag(s_words)
     
-   
+    tagged = nltk.pos_tag(s_words)
     
     print(tagged)
     
-    for item in tagged:
-        if item[1][0] == 'N':
-            prep.append(item[0])
-        if item[1][0] == 'V':
-            prep.append(item[0])
-        if item[1][0] == 'J':
-            prep.append(item[0])
+    prep = [item[0] for item in tagged if item[1][0] == 'N']
+    
+    print(prep)
     
     for wo in prep:
         for syn in wordnet.synsets(wo):
-            for l in syn.lemma_names():
-                s_words.append(l)
+            for lemma in syn.lemma_names():
+                print(lemma)
+                s_words.append(lemma)
     
     for se in s_words:
         for i, w in enumerate(words):
