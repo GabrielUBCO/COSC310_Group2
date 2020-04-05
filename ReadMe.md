@@ -40,7 +40,19 @@ The chat fuction allows the user to chat with RamsayBot.
 
 RamsayBot will try to give a suitable response depending on what it predicts to be the topic of the question given.
 
+Features programmed in assignment 3:
 
+- GUI so user is typing into a nicer interface. GUI makes the chatbot more user friendly (easier to read, simple layout). For example, the user enters a question on one line, and the chatbot leaves a empty line between the question and the response to make it easier for the user to read the answer. The text is white on a dark background, which also enhances readibility.
+
+- Extra topic to agent's repertoire: Gordon Ramsay providing relationship advice. The original topic covers content about Gordon Ramsay's personal life and answers to some general questions. The new topic focuses on relationship advice; RamsayBot will answer user's questions about relationships by providing his own advice. For example, when the user asks for dating activities, RamsayBot recommends "Cooking for each other" or "Doing exercise together", activities which Gordon Ramsay himself would enjoy.
+
+- Feature that enables agent to give at least 5 different reasonable responses when user enters something outside the two topics. As we only have a limited set of questions, we included 5 different responses when the user enters something outside the two topics, informing the user to ask another question. This is to make the conversation as smooth and natural as possible. For example, we have included the following response when the user enters something outside the two topics: "Sorry, I am having some difficulty understanding that. Can you ask another question?"
+
+- Feature that enables agent to handle spelling mistakes of the words which agent should recognize. We have included a feature that enables the agent to provide a suitable response when the user types a question with spelling errors in it. This is to make the conversation as smooth and natural as possible. For example, when the user types "what si your favourit sport", the agent will recognize the spelling errors and provide the standard reply.
+
+- Feature that enables agent to recognize synonyms and handle them appropriately. We have included a feature that enables the agent to provide a suitable response when the user types a question using a synonym for any of the tags listed under topics.json. This is to make the conversation as smooth and natural as possible. For example, when the user asks "Should I prioritize my career or my relationship?" or "Should I prioritize my job or my relationship?", the agent will provide the same answer since 'career' and 'job' have the same meaning.
+
+- Feature that enables agent to have a conversation with another agent via sockets. As one of the goals of the assignment is for our chatbot to be able to have a conversation with another chatbot in class via sockets, we have included this feature into our chatbot. However, as we do not have access to any other chatbots from the class due to the current circumstances, we are unable to demonstrate this feature.
 
 
 
