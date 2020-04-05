@@ -20,9 +20,11 @@ def send():
 
 
 base = Tk()
-base.title("RamsayBot")
 base.geometry("800x450")
 base.resizable(width=FALSE, height=FALSE)
+base.title("RamsayBot")
+
+
 
 #Create Chat window
 ChatLog = Text(base, bd=0, bg="#404040", height="10", width="50", font="Arial",)
@@ -44,9 +46,11 @@ EntryBox = Text(base, bd=0, bg="#E0E0E0",width="29", height="2", font="Arial")
 
 
 #Place all components on the screen
-scrollbar.place(x=784,y=6, height=386)
 ChatLog.place(x=6,y=6, height=386, width=800)
 EntryBox.place(x=128, y=401, height=30, width=660)
+scrollbar.place(x=784,y=6, height=386)
+
 SendButton.place(x=6, y=401, height=30)
+
 
 base.mainloop()
